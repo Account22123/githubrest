@@ -4,7 +4,7 @@
 /* CSS Document */
 
 
-@media screen and (max-width: 767px) {
+@media only screen and (max-width: 767px) and (min-width: 100px) {
 
 
 
@@ -312,6 +312,7 @@ nav h1 a {
   font-size: 34px;
   color: #666;
 }
+
 }
 
 
@@ -676,7 +677,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   width: 100%;
 }
 #footer {
-  background-color: red;
+  background-color: #707070FF;
   color: #aaa;
   font-size: 8pt;
   letter-spacing: 1px;
