@@ -1,7 +1,7 @@
 {
   "restaurants": [{
     "id": 1,
-    "name": "Misson Chinese Food",
+    "name": "Mission Chinese Food",
     "neighborhood": "Manhattan",
     "photograph": "1.jpg",
     "address": "171 E Broadway, New York, NY 10002",
