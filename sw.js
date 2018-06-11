@@ -1,13 +1,45 @@
 
 
+var CACHE_NAME = 'my-site-cache-v1';
+var urlsToCache = [
+  '/',
+  './img/1.jpg',
+  './img/2.jpg',
+  './img/3.jpg',
+  './img/4.jpg',
+  './img/5.jpg',
+  './img/6.jpg',
+  './img/7.jpg',
+  './img/8.jpg',
+  './img/9.jpg',
+  './img/10.jpg',
+  '/restaurant.html',
+  '/index.html',
+  './css/styles.css',
+  './js/dbhelper.js',
+  './js/main.js',
+  './js/restaurant_info.js',
+  './data/restaurants.json',
+];
+
 if ('serviceWorker' in navigator) {
-  // Register a service worker hosted at the root of the
-  // site using the default scope.
-  navigator.serviceWorker.register('/sw.js').then(function(registration) {
-    console.log('Service worker registration succeeded:', registration);
-  }).catch(function(error) {
-    console.log('Service worker registration failed:', error);
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
   });
-} else {
-  console.log('Service workers are not supported.');
 }
+
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(function(cache) {
+        console.log('Opened cache');
+        return cache.addAll(urlsToCache);
+      })
+  );
+});
