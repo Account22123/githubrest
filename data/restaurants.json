@@ -2,6 +2,7 @@
   "restaurants": [{
     "id": 1,
     "name": "Mission Chinese Food",
+    "nameEl": "Chinese food being served at an open round table.",
     "neighborhood": "Manhattan",
     "photograph": "1.jpg",
     "address": "171 E Broadway, New York, NY 10002",
